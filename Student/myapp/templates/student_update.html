@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block title_block%}
+<title>Update-Student</title>
+{%endblock%}
+
+{%block main_block%}
+<div class="container border shadow mt-5 p-4 w-50">
+    <h1 class="text-center">Edit Student</h1>
+    <form action="" method="post" class="w-100">
+        {%csrf_token%}
+        {{form}}
+    
+        <button type="submit" class="form-control btn btn-outline-dark mt-3">Edit</button>
+    </form>
+</div>
+{%endblock%}

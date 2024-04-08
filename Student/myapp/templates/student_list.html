@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+
+{%block title_block%}
+<title>Student-List</title>
+{%endblock%}
+
+{%block main_block%}
+<div class="container mt-5 p-4 border shadow">
+    <h1 class="text-center">All Students</h1>
+    <a href="{%url 'student-add'%}" class="btn btn-dark">AddNewStudent</a>
+    <table class="table">
+        <th>Student Name</th>
+        <th>Course Name</th>
+        <th>Fees</th>
+        <th>Action</th>
+
+        {%for s in data%}
+        <tr>
+            <td>{{s.StudentName}}</td>
+            <td>{{s.CourseName}}</td>
+            <td>{{s.Fees}}</td>
+            <td>
+              <a href="{% url 'student-detail' s.id%}" class="btn btn-outline-info">View</a>
+              <a href="{% url 'student-delete' s.id%}" class="btn btn-outline-danger">Delete</a>
+              <a href="{% url 'student-update' s.id%}" class="btn btn-outline-warning">Edit</a>
+
+
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</div>
+{%endblock%}

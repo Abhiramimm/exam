@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{%block title_block%}
+<title>Add-Student</title>
+{%endblock%}
+{%block main_block%}
+<div class="container mt-5 border shadow p-4 w-50">
+    <h1 class="text-center">Add Student</h1>
+    <form action="" method="post" class="w-100">
+        {%csrf_token%}
+        {{form}}
+    
+        <button type="submit" class="form-control mt-3 btn btn-outline-dark">Add</button>
+    </form>
+</div>
+{%endblock%}
